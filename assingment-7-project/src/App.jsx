@@ -35,7 +35,7 @@ function App() {
             </ul>
           </div>
           <div className="navbar-end">
-            <label className=" text-xl  lg:flex bg-gray-50 p-3 lg:p-0 lg:input input-bordered flex items-center gap-2 rounded-full mr-2 ">
+            <label className=" text-xl lg:text-lg  lg:flex bg-gray-50 lg:bg-gray-200 p-3 lg:p-0 lg:input flex items-center gap-2 rounded-full mr-2 ">
               <input type="text" className="grow hidden lg:block" placeholder="Search" />
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
             </label>
@@ -44,7 +44,7 @@ function App() {
         </div>
       </header>
       {/* banner section  */}
-      <section className='container mx-auto my-5'>
+      <section className=' w-[90%] lg:container mx-auto my-5'>
         <div className="hero min-h-screen rounded-xl" style={{ backgroundImage: 'url(./src/assets/pexels-prince-photos-3054690.jpg)' }}>
           <div className="hero-overlay bg-black bg-opacity-80 rounded-xl"></div>
           <div className="hero-content text-center text-neutral-content">
@@ -56,9 +56,9 @@ function App() {
               <br />
               in this page you will learn how to cook some of our best deserts .  
               </p>
-              <div>
-              <button className="btn bg-">Explore more </button>
-              <button className="btn btn-primary">Get Started</button>
+              <div className='flex flex-col lg:flex-row justify-center gap-3'>
+              <button className=" mx-auto lg:mx-0 text-center justify-center w-36 btn border-none bg-[#0BE58A]">Explore more </button>
+              <button className=" mx-auto lg:mx-0 text-center justify-center w-36 btn btn-ghost border border-white">Our Feedback</button>
               </div>
             </div>
           </div>
