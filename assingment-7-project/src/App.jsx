@@ -1,10 +1,20 @@
 
+import { useEffect, useState } from 'react';
 import './App.css'
 import MainFunc from './components/main-part/MainFunc';
 import Sidebar from './components/sidebar/Sidebar'
 import { FaRegUserCircle } from "react-icons/fa";
 
 function App() {
+  const [cards , setCards] = useState([])
+  useEffect(()=>{
+    fetch('recipe.json')
+    .then(res => res.json())
+    .then(result => setCards(result) )
+      
+  }
+  ,[])
+  // console.log(cards);
   return (
     <div className='relative'>
       {/* navbar  */}
@@ -64,8 +74,16 @@ function App() {
           </div>
         </div>
       </section>
-      <div className=' flex container mx-auto'>
-        <MainFunc></MainFunc>
+      {/* title section  */}
+      <section className=' my-10'>
+      <h1 className="mb-5 text-center text-2xl lg:text-5xl font-bold ">Our Recipes</h1>
+              <p className="mb-5 mx-auto max-w-sm lg:w-full text-center">Assalamualaikum Everyone welcome to our kitchen.
+              <br />
+              all of our best deserts are given blew do not waste {"you're"} time check out our Recipe.  
+              </p>
+      </section>
+      <div className=' flex flex-col lg:flex-row gap-x-3 container mx-auto'>
+        <MainFunc cards={cards}></MainFunc>
         <Sidebar></Sidebar>
       </div>
     </div>
