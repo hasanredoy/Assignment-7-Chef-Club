@@ -17,7 +17,7 @@ const Sidebar = ({ sidebar, handleRemove, cooking }) => {
       </div>
       {
         sidebar.map((side, index) => {
-          console.log(side);
+          
           return (
             <div key={index} className=' flex justify-between bg-white rounded-xl px-2 py-4  mb-2'>
               <div className='flex justify-evenly gap-x-7 pl-0 mt-2 '>

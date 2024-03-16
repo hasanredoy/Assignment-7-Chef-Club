@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 
 const Cooking = ({cooking}) => {
-  console.log(cooking);
+  
   return (
     <div>
       {

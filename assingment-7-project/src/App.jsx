@@ -36,7 +36,7 @@ function App() {
       const setNewCooking = [...cooking, card]
       setCooking(setNewCooking)
     }
-  // console.log(cards);
+  
   return (
     <div className='relative'>
       {/* navbar  */}

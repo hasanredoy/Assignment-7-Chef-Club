@@ -3,7 +3,7 @@ import { IoMdTime } from "react-icons/io";
 import { RiFireLine } from "react-icons/ri";
 
 const MainFunc = ({ cards ,handleAdd}) => {
-  // console.log(cards);
+  
   return (
     <div className=' grid grid-cols-1 lg:grid-cols-2 gap-4 mx-auto w-[95%] lg:w-[65%] '>
       {
