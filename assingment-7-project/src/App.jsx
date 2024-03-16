@@ -77,7 +77,7 @@ function App() {
       </header>
       {/* banner section  */}
       <section className=' w-[90%] lg:container mx-auto my-5'>
-        <div className="hero min-h-screen rounded-xl" style={{ backgroundImage: 'url(./src/assets/pexels-prince-photos-3054690.jpg)' }}>
+        <div className="hero min-h-screen rounded-xl" style={{ backgroundImage: 'url(https://i.postimg.cc/ncXKvtTP/pexels-prince-photos-3054690.jpg)' }}>
           <div className="hero-overlay bg-black bg-opacity-80 rounded-xl"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="">
