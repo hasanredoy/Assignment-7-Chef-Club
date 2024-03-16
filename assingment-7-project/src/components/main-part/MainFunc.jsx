@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import { IoMdTime } from "react-icons/io";
 import { RiFireLine } from "react-icons/ri";
 
-const MainFunc = ({ cards }) => {
-  console.log(cards);
+const MainFunc = ({ cards ,handleAdd}) => {
+  // console.log(cards);
   return (
     <div className=' grid grid-cols-1 lg:grid-cols-2 gap-4 mx-auto w-[95%] lg:w-[65%] '>
       {
@@ -32,7 +32,7 @@ const MainFunc = ({ cards }) => {
                   <h3 className='flex text-lg gap-2'><span className=' mt-1'><RiFireLine /></span>{card.calories} calories </h3>
                 </div>
                 <div className="card-actions justify-start">
-                  <button className=" rounded-full btn bg-[#0BE58A]">Want To Cook</button>
+                  <button className=" rounded-full btn bg-[#0BE58A]" onClick={()=>handleAdd(card)}>Want To Cook</button>
                 </div>
               </div>
             </div>
@@ -44,7 +44,8 @@ const MainFunc = ({ cards }) => {
 };
 
 MainFunc.propTypes = {
-  cards: PropTypes.object
+  cards: PropTypes.array,
+  handleAdd: PropTypes.func,
 };
 
 export default MainFunc;

@@ -4,6 +4,9 @@ import './App.css'
 import MainFunc from './components/main-part/MainFunc';
 import Sidebar from './components/sidebar/Sidebar'
 import { FaRegUserCircle } from "react-icons/fa";
+  import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   const [cards, setCards] = useState([])
@@ -14,6 +17,25 @@ function App() {
 
   }
     , [])
+    const [sidebar, setSidebar] =useState([])
+    let [cooking , setCooking] = useState([])
+    const handleAdd =(card)=>{
+      console.log(card);
+      const newCard = sidebar.find(sidebarX => sidebarX.recipe_id == card.recipe_id)
+      if(!newCard){
+        const setNewSidebar = [...sidebar , card]
+        setSidebar(setNewSidebar)
+      }
+      else toast("Already Exist")
+    }
+    
+    const handleRemove=(card)=>{
+      console.log(card);
+      const newCards = sidebar.filter(sideX => sideX.recipe_id !== card.recipe_id)
+      setSidebar(newCards)
+      const setNewCooking = [...cooking, card]
+      setCooking(setNewCooking)
+    }
   // console.log(cards);
   return (
     <div className='relative'>
@@ -84,8 +106,8 @@ function App() {
       </section>
       {/* components section  */}
       <div className=' flex flex-col lg:flex-row gap-x-3 container mx-auto'>
-        <MainFunc cards={cards}></MainFunc>
-        <Sidebar></Sidebar>
+        <MainFunc cards={cards} handleAdd={handleAdd}></MainFunc>
+        <Sidebar cooking={cooking} sidebar={sidebar}  handleRemove={handleRemove}></Sidebar>
       </div>
       {/* footer  */}
       <footer>
@@ -93,8 +115,8 @@ function App() {
           <nav className="grid grid-flow-col gap-4">
             <a className="link link-hover">About us</a>
             <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
+            <a className="link link-hover">Cooking Tutorials</a>
+            <a className="link link-hover">Feedback</a>
           </nav>
           <nav>
             <div className="grid grid-flow-col gap-4">
@@ -104,10 +126,11 @@ function App() {
             </div>
           </nav>
           <aside>
-            <p>Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
+            <p>Copyright © 2024 - All right reserved || by Hossain Hasan Redoy </p>
           </aside>
         </footer>
       </footer>
+      <ToastContainer></ToastContainer>
     </div>
   )
 }
