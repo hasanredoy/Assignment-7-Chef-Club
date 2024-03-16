@@ -21,10 +21,30 @@ const Sidebar = ({ sidebar, handleRemove, cooking }) => {
           return (
             <div key={index} className=' flex justify-between bg-white rounded-xl px-2 py-4  mb-2'>
               <div className='flex justify-evenly gap-x-7 pl-0 mt-2 '>
-                <h2 >{index + 1}</h2>
+                {/* <h2 >{index + 1}</h2>
                 <h2>{side.recipe_name}</h2>
                 <h2>{side.preparing_time} minutes</h2>
-                <h2 className=' lg:pl-12'>{side.calories} Calories</h2>
+                <h2 className=' lg:pl-12'>{side.calories} Calories</h2> */}
+                 <tr>
+                   <td>
+                   {index+1}.
+                  </td>
+                </tr>
+                <tr className='border-r border-gray-500 pr-1'>
+                   <td>
+                   {side.recipe_name}
+                  </td>
+                </tr>
+                <tr className='border-r border-gray-500 pr-2'>
+                   <td>
+                   {side.preparing_time} minutes
+                  </td>
+                </tr>
+                <tr className='pl-6'>
+                   <td>
+                   {side.calories} calories
+                  </td>
+                </tr>
               </div>
               <button onClick={() => handleRemove(side)} className='btn bg-[#0BE58A] rounded-full ml-2'>Preparing</button>
             </div>
@@ -46,8 +66,8 @@ const Sidebar = ({ sidebar, handleRemove, cooking }) => {
       </div>
       <div className="divider"></div>
       <div className=' flex justify-evenly'>
-      <h3>Total Time= {time.reduce((a,b)=>a+b,0)} </h3>
-        <h3>Total Calories= {calories.reduce((a,b)=>a+b,0)}</h3>
+      <h3>Total Time= {time.reduce((a,b)=>a+b,0)} minutes</h3>
+        <h3>Total Calories= {calories.reduce((a,b)=>a+b,0)} calories</h3>
       </div>
     </div>
   );
